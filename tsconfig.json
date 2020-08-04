@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "exclude": ["./node_modules"],
+  "include": ["./src/**/*.ts", "./src/**/*.test.ts", "./src/**/*.tsx", "./src/**/*.test.tsx"],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["esnext", "dom"],
+    "module": "commonjs",
+    "newLine": "lf",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noResolve": true,
+    "outDir": "./lib",
+    "pretty": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": "./src",
+    "strict": true,
+    "target": "es5",
+    "types": ["jest"]
+  },
+  "files": ["types/react-novnc.d.ts"]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "tortoise",
+  "version": "0.1.0",
+  "description": "Local rabb.it alternative based off of Node.js - The Tortoise Beats the Hare",
+  "main": "lib/server/index.js",
+  "scripts": {
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "jest --config jest.config.js",
+    "predev": "npm run build",
+    "dev": "tsc --watch & webpack-dev-server --config webpack.config.dev.js & nodemon lib/server/index.js -e js",
+    "prebuild": "mkdir -p lib && rm -r lib && mkdir -p public && rm -r public",
+    "build": "tsc & NODE_ENV=production webpack --config webpack.config.prod.js & wait",
+    "prestart": "npm run build",
+    "start": "NODE_ENV=production node lib/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrkienle/tortoise.git"
+  },
+  "keywords": [
+    "rabb.it"
+  ],
+  "author": "James Kienle <james.kienle@gmail.com> (http://jameskienle.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrkienle/tortoise/issues"
+  },
+  "homepage": "https://github.com/jrkienle/tortoise#readme",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "@types/jest": "^24.0.18",
+    "@types/koa": "^2.0.50",
+    "@types/koa-static": "^4.0.1",
+    "@types/nunjucks": "^3.1.2",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.15.0",
+    "eslint-plugin-react-hooks": "^2.1.1",
+    "jest": "^24.9.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "nodemon": "^1.19.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.18.2",
+    "style-loader": "^1.0.0",
+    "tailwindcss": "^1.1.2",
+    "terser-webpack-plugin": "^2.1.3",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "koa": "^2.10.0",
+    "koa-static": "^5.0.0",
+    "nunjucks": "^3.2.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-novnc": "^0.1.1"
+  }
+}
